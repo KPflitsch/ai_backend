@@ -4,9 +4,10 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
+const PORT = process.env.PORT || 3001;
+
 const wss = new WebSocketServer({
-    host: '0.0.0.0',
-    port: 3001,
+    port: Number(PORT),
 });
 
 wss.on('connection', function connection(ws: WebSocket, request) {
@@ -46,4 +47,4 @@ wss.on('connection', function connection(ws: WebSocket, request) {
     });
 });
 
-console.log('WebSocket server running on 0.0.0.0 port 3001');
+console.log
